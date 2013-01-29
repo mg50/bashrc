@@ -30,8 +30,8 @@ function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
 }
 
-YELLOW='\e[0;33m'
-WHITE='\e[0;37m'
+YELLOW='\[\e[0;33m\]'
+WHITE='\[\e[0;37m\]'
 PS1="[\W$YELLOW$(parse_git_branch)$WHITE] $ "
 
 alias src="source ~/.bash_profile"
